@@ -1,5 +1,3 @@
-import numberrangesummarizer.NumberRangeSummarizer;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -22,16 +20,19 @@ public class Summarizer implements NumberRangeSummarizer {
     //method to collect input of integers
     public Collection<Integer> collect (String input){
 
-        Char[] arrInput = input.split(','); //Splitting input 
+        String[] arrInput = input.split(","); //Splitting input 
         Collection<Integer> inputCol = new ArrayList<Integer>();
 
         for (int i=0; i< arrInput.length; i++){
-            inputCol.add(arrInput[i]);
+            inputCol.add(Integer.parseInt(arrInput[i]));
         }
-
         return inputCol;
 
     }
 
+    @Override
+    public  String summarizeCollection(Collection<Integer> input){
+        return "Hello";
+    }
     
 }
