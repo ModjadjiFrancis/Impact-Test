@@ -71,11 +71,14 @@ public class Summarizer implements NumberRangeSummarizer {
                 end = workingInput;
              }
 
+            //adding ranges to arrayList
+
         }
 
+        String completeRange = start + "-" + end;
+        inputRanges.add(completeRange);
         
-        
-        return "Hello";
+        return String.join(",", inputRanges);
     }
     
 }
