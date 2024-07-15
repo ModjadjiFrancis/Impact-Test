@@ -29,6 +29,9 @@ public class Summarizer implements NumberRangeSummarizer {
     public Collection<Integer> collect (String input){
 
         //checking input
+        if (input.isEmpty()){
+            return null;
+        }
 
         String[] arrInput = input.split(","); //Splitting input 
         Collection<Integer> inputCol = new ArrayList<Integer>();
