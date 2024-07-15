@@ -18,6 +18,8 @@ public class Summarizer implements NumberRangeSummarizer {
         String numList = input.nextLine(); 
         
         NumberRangeSummarizer numSum = new Summarizer();
+
+        System.out.println("Your summarised and ordered list is below:");
         System.out.println(numSum.summarizeCollection(numSum.collect(numList)));
         
     }
