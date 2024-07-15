@@ -1,8 +1,3 @@
-/* ASSUMPTIONS
- * 
- * Input entered will always be ordered. Assumption based on the ordered input example provided
- * 
- */
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,6 +16,8 @@ public class Summarizer implements NumberRangeSummarizer {
 
         System.out.println("Your summarised and ordered list is below:");
         System.out.println(numSum.summarizeCollection(numSum.collect(numList)));
+
+        input.close();
         
     }
 
@@ -40,14 +37,11 @@ public class Summarizer implements NumberRangeSummarizer {
             inputCol.add(Integer.parseInt(arrInput[i]));
         }
         return inputCol;
-        //An exception needs to be caught!
     }
 
     @Override
     public  String summarizeCollection(Collection<Integer> input){
         
-        //Method to take input and summarise the collection
-
         //Check for empty input 
 
         if (input.isEmpty()){
@@ -74,11 +68,6 @@ public class Summarizer implements NumberRangeSummarizer {
                 end = workingInput;
              } //if 4 = 3 + 1; then end = 4 instead of 3
              else{
-                //if not start - start is the range
-                // String singleRange = workingInput+"";
-                // inputRanges.add(singleRange);
-                // start = workingInput;
-                // end = workingInput;
                 inputRanges.add(ranges(start, end));
                 start = workingInput;
                 end = workingInput;
