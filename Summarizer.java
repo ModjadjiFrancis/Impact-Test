@@ -15,7 +15,7 @@ public class Summarizer implements NumberRangeSummarizer {
         //using the interface 
         NumberRangeSummarizer numSum = new Summarizer();
         System.out.println(numSum.collect("1,2,3,4,5,6"));
-        System.out.println(numSum.summarizeCollection(null));
+        System.out.println(numSum.summarizeCollection(numSum.collect("1,2,3,4,5,6")));
         
     }
 
