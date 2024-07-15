@@ -60,7 +60,16 @@ public class Summarizer implements NumberRangeSummarizer {
             int workingInput = sortedInput.get(i); //input being looped
 
             //checking if working input is in range
-            
+             if (workingInput == end + 1){
+                end = workingInput;
+             } //if 4 = 3 + 1; then end = 4 instead of 3
+             else{
+                //if not start - start is the range
+                String singleRange = workingInput+"";
+                inputRanges.add(singleRange);
+                start = workingInput;
+                end = workingInput;
+             }
 
         }
 
