@@ -49,7 +49,20 @@ public class Summarizer implements NumberRangeSummarizer {
         ArrayList<Integer> sortedInput = new ArrayList<>(input);
         Collections.sort(sortedInput);
 
-        //Seperating the input into ranges
+        //Seperating the input into ranges. Each range has a start and end number
+        ArrayList<String> inputRanges = new ArrayList<>();
+        int start = sortedInput.get(0); //first number in sorted starts the first range
+        int end = start; //Assuming start - start is first range
+
+        //for loop to populate a range, to start at 1
+
+        for (int i = 1; i < sortedInput.size(); i++){
+            int workingInput = sortedInput.get(i); //input being looped
+
+            //checking if working input is in range
+            
+
+        }
 
         
         
