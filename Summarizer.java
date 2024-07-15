@@ -7,21 +7,26 @@
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class Summarizer implements NumberRangeSummarizer {
     
     public static void main (String args[]){
         
-        //using the interface 
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please enter your list of numbers.");
+        String numList = input.nextLine(); 
+        
         NumberRangeSummarizer numSum = new Summarizer();
-        System.out.println(numSum.collect("1,2,3,4,5,6"));
-        System.out.println(numSum.summarizeCollection(numSum.collect("1,2,3,4,5,6")));
+        System.out.println(numSum.summarizeCollection(numSum.collect(numList)));
         
     }
 
     @Override
     //method to collect input of integers
     public Collection<Integer> collect (String input){
+
+        //checking input
 
         String[] arrInput = input.split(","); //Splitting input 
         Collection<Integer> inputCol = new ArrayList<Integer>();
@@ -65,20 +70,27 @@ public class Summarizer implements NumberRangeSummarizer {
              } //if 4 = 3 + 1; then end = 4 instead of 3
              else{
                 //if not start - start is the range
-                String singleRange = workingInput+"";
-                inputRanges.add(singleRange);
+                // String singleRange = workingInput+"";
+                // inputRanges.add(singleRange);
+                // start = workingInput;
+                // end = workingInput;
+                inputRanges.add(ranges(start, end));
                 start = workingInput;
                 end = workingInput;
              }
-
-            //adding ranges to arrayList
-
         }
 
-        String completeRange = start + "-" + end;
-        inputRanges.add(completeRange);
+        inputRanges.add(ranges(start, end));
         
         return String.join(",", inputRanges);
+    }
+
+    public String ranges(int start, int end){
+        if (start == end){
+            return String.format("%d", start);
+        }else{
+            return String.format("%d-%d",start,end);
+        }
     }
     
 }
